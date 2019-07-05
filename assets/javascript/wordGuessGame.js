@@ -3,7 +3,7 @@ const countries = ["CANADA", "USA", "MEXICO"];
 
 
 // When player clicks start...
-
+function playGame() {
 
 // Pick a word randomly from words-array and set as secret word
 var secretWord = countries[Math.floor(Math.random() * countries.length)];
@@ -14,58 +14,65 @@ console.log(secretWordLetters);
 
 // Create guessing outline based on array length
 var wordOutline = [];
-for(var i = 0; i < secretWordLetters.length; i++) {
-    wordOutline.push("_");
-}
+for(var ol = 0; ol < secretWordLetters.length; ol++) {
+    wordOutline.push("_ ");
+}// end for-loop
 
-// Display outline on screen
-// document.getElementById("guessingOutline") = wordOutline[].value
+// Create counter to track letters left to guess
+var lettersRemaining = secretWord.length;
+
+// Main function 
+
+var wrongLetters = [];
+var wrongCounter = 0;
+console.log(lettersRemaining);
+// debugger;
 
 // Get player guess
-var guessArray = [];
-var letter = "";
-var name = "";
+if (lettersRemaining < 0) {
 
-document.onkeydown = function getGuess (e) {
-    var letter = String.fromCharCode(e.which);
-    console.log(letter);
+    alert("WINNER!");
+    return;
+
+}//end main if-loop
+
+else if (lettersRemaining > 0) {
+    document.onkeydown = function getGuess (e) {
+        var letter = String.fromCharCode(e.which);
+        console.log(letter);
     
-// Check if guess is in SecretWordLetters array using if
-function findLetterInArray() {
-
-    for (var i = 0; i < secretWordLetters.length; i++) {
-        name = secretWordLetters[i];
-        if(letter==name) {
-            console.log("name: " + name);
-            break;
-        }//end if
-    }//end for-loop
+    //Check if letter has been guessed already
+    if (wordOutline.includes(letter) == true || wrongLetters.includes(letter) == true) {
+        alert("you've already guessed this letter!");
+        return;
+    }
     
-}//end function
-}//end function
+    // As long as letter has not been guessed already 
+    // proceed to check if letter is in secret word
+    else {
+    // Check if guess is in SecretWordLetters array using for-loop and if
+        for (var i = 0; i < secretWordLetters.length; i++) {
+            if (secretWordLetters.includes(letter) == false) {
+                wrongLetters.push(letter);
+                wrongCounter++;
+                console.log("wrongCounter: "+ wrongCounter);
+                console.log("wrongLetters: "+ wrongLetters);
+                return;
+            }
+            else if (letter===secretWordLetters[i]) {
+                console.log("name: " + secretWordLetters[i]); //replace with push to correct array
+                wordOutline[i] = letter;
+                // wordOutline.splice(i, i, letter);
+                lettersRemaining--;
+                console.log("wordOutline: " + wordOutline);
+            }//end else if
+        }//end for-loop
+    
+        console.log(lettersRemaining)
+    
+    }//end else
+    
+    }//end getGuess function
+}// end main else if function
 
-// Find matches from player input against secret word. Put into correct array or incorrect array
-
-
-// Create variable array of guessed letters that match the word for tracking in game
-var correctLetters = [];
-
-correctLetters.push(letter);
-
-// Create variable array of guessed letters that don't match the word
-var incorrectLetters =[];
-
-incorrectLetters.push(letter);
-
-//Replace outline index with correct letter index
-secretWord.indexOf(letter);
-
-
-//console.logs - to remove!!
-console.log("secretWord: " + secretWord)
-console.log("secretWord.length: " + secretWord.length)
-console.log("secretWordLetters: " + secretWordLetters)
-console.log("i: " + i)
-console.log("name: " + name)
-console.log("wordOutline: " + wordOutline)
-console.log("letter: " + letter)
+}//end function playGame
