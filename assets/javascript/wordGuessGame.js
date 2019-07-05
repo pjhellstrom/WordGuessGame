@@ -23,25 +23,26 @@ for(var i = 0; i < secretWordLetters.length; i++) {
 
 // Get player guess
 var guessArray = [];
+var letter = "";
+var name = "";
 
 document.onkeydown = function getGuess (e) {
-    var letterCode = "";
-    var letterKey = "";
-    letter = String.fromCharCode(e.which);
-    console.log(letter)
-}//end function
-
+    var letter = String.fromCharCode(e.which);
+    console.log(letter);
+    
 // Check if guess is in SecretWordLetters array using if
+function findLetterInArray() {
 
-if (secretWordLetters.includes("letter") === true) {
-    alert("Winner");
-}// end if
-
-// if (letter == )
-
-// document.onkeydown = function getGuess(ev) {
-//     var letter = String.fromCharCode(ev.letter);
-// }// end function
+    for (var i = 0; i < secretWordLetters.length; i++) {
+        name = secretWordLetters[i];
+        if(letter==name) {
+            console.log("name: " + name);
+            break;
+        }//end if
+    }//end for-loop
+    
+}//end function
+}//end function
 
 // Find matches from player input against secret word. Put into correct array or incorrect array
 
@@ -49,16 +50,22 @@ if (secretWordLetters.includes("letter") === true) {
 // Create variable array of guessed letters that match the word for tracking in game
 var correctLetters = [];
 
+correctLetters.push(letter);
+
 // Create variable array of guessed letters that don't match the word
 var incorrectLetters =[];
 
-//Prompt user to guess a letter
+incorrectLetters.push(letter);
+
+//Replace outline index with correct letter index
+secretWord.indexOf(letter);
 
 
 //console.logs - to remove!!
-console.log(secretWord)
-console.log(secretWord.length)
-console.log(i)
-console.log(wordOutline)
-
-//outline creation not working
+console.log("secretWord: " + secretWord)
+console.log("secretWord.length: " + secretWord.length)
+console.log("secretWordLetters: " + secretWordLetters)
+console.log("i: " + i)
+console.log("name: " + name)
+console.log("wordOutline: " + wordOutline)
+console.log("letter: " + letter)
