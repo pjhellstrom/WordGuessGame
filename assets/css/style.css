@@ -1,4 +1,97 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Coustard', serif;
+}
+
+.navbar {
+
+}
+
+.jumbotron {
+    background: url(/assets/images/canada_scenery.jpg);
+    background-size: cover;
+    background-position: 0% 70%
+}
+
+.jumbotron p {
+    padding: 10px;
+    color: #fff;
+    background: rgba(78, 78, 78, 0.507);
+    border-radius: 7px;
+}
+
+.padding {
+    padding: 10px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+#playGame {
+    font-family: 'Coustard', serif;
+    font-weight: ;
+}
+
+
+/* Word Arrays */
+
+#wordOutline {
+    font-size: 200%;
+}
+
+#wrongLetters {
+    font-size: 150%;
+}
+
+/* Leaf animation */
+
+#mapleleaf {
+    animation-name: leafanimation;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes leafanimation{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-20deg);       
+    }
+    50%{
+        transform: rotate(0deg); 
+    }
+    75%{
+        transform: rotate(20deg);        
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+#mapleleafRed {
+    animation-name: leafanimation2;
+    animation-duration: 3s;
+    width: 170px;
+    height: 170px;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes leafanimation2 {
+    0%{
+        transform: rotateY(0deg)
+    }
+    50%{
+        transform: rotateY(90deg)
+    }
+    100%{
+        transform: rotateY(0deg)
+    }
 }
