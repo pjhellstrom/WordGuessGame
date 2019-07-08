@@ -28,22 +28,14 @@ var lettersRemaining = secretWord.length;
 
     document.onkeydown = function getGuess (e) {
 
-    console.log(secretWord);
-
-
-
-
-
     var letter = String.fromCharCode(e.which);
 
     // Check if letters remain to be guessed
     if (lettersRemaining > 1) {
         
-
-
         //Check if letter has been guessed already
         if (wordOutline.includes(letter) == true || wrongLetters.includes(letter) == true) {
-            alert("you've already guessed this letter!");
+            alert("You've already guessed this letter! Try another letter.");
             return;
         }//end if-loop
         
@@ -87,7 +79,8 @@ var lettersRemaining = secretWord.length;
 
     else {
         // increase score and update to screen
-        playerScore++; 
+        alert("You guessed it! It's " + secretWord + "!");
+        playerScore++;
         //Check if score greater than 4, if it is alert winner and reset
         if (playerScore >4) {
             letter = [];
@@ -97,7 +90,7 @@ var lettersRemaining = secretWord.length;
             wrongLetters = [];
             document.getElementById("wrongLetters").innerHTML = wrongLetters;
             document.getElementById("scoreTracker").innerHTML = playerScore + "/5";   
-            alert("Good job! You're a winner!");
+            alert("Good job! You win!");
             playGame();     
         }//end if
         else {
@@ -107,7 +100,6 @@ var lettersRemaining = secretWord.length;
             wrongCounter = 0;
             wrongLetters = [];
             document.getElementById("wrongLetters").innerHTML = wrongLetters;
-
             // call playGame() for a new round
             playGame();
         }//end else
@@ -115,7 +107,3 @@ var lettersRemaining = secretWord.length;
     }//end getGuess function
 
 }//end function playGame
-
-
-                    // //Check if wrongCount is higher than 4, if it is, reset score and launch a new game
-

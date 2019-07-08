@@ -19,22 +19,7 @@
         <!--Navigation-->
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Canadian Cities - The Guessing Game</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <h2 class="container-fluid">Canadian Cities - A Guessing Game</h2>
     </nav>
 
 <!-- Main Game Div -->
@@ -43,19 +28,21 @@
     <!--Jumbotron-->
 
     <div class="container-fluid">
-            <div class="row jumbotron">
-                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                    <p class="lead">
-                        How to play:<br>
-                        Click the <strong>Let's Play!</strong> button to start the game. Guess the Canadian city based on the number of blank spaces! Five incorrect guesses will reset the game...
-                    </p>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 my-auto">
-                    <a href="#"><button onclick="playGame()" id="playGame" type="button" class="btn btn-danger btn-lg">Let's Play! <img id="mapleleaf" src="./assets/images/mapleleaf_white_small.png" style="width:30px; height: 30px;"></button></a>
-                    
-                </div>
-            </div>   
+        <div class="row jumbotron">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                <p class="lead">
+                    How to play:<br>
+                    Click the <strong>Let's Play!</strong> button to start the game. <br>
+                    Guess the Canadian city based on the number of blank spaces! <br>
+                    Guess five cities correctly and you win! Five incorrect guesses will reset the game...
+                </p>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 my-auto">
+                <a href="#"><button onclick="playGame()" id="playGame" type="button" class="btn btn-danger btn-lg">Let's Play! <img id="mapleleaf" src="./assets/images/mapleleaf_white_small.png" style="width:30px; height: 30px;"></button></a>
+                
+            </div>
+        </div>   
+    </div>
 
     <!--Two column section-->
     <div class="container-fluid padding text-center">
